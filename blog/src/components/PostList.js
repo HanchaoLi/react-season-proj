@@ -13,4 +13,8 @@ class PostList extends React.Component {
     }
 }
 
-export default connect(null, { fetchPosts: fetchPosts })(PostList);
+const mapStateToProps = (state) => {
+    return { posts: state.posts };
+}
+
+export default connect(mapStateToProps, { fetchPosts: fetchPosts })(PostList);
